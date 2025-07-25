@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>boeken bibliotheek</title>
+
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="/styles/style.css" />
+    <script src="src/app.js" defer></script>
+  </head>
+  <body>
+    <section>
+      <h1>De bibliotheek</h1>
+      <form action="post" id="nieuw-boek">
+        <div class="catergorie">
+          <label for="title">titel</label>
+          <input type="text" id="title" required />
+        </div>
+        <div class="catergorie">
+          <label for="author">auteur</label>
+          <input type="text" id="auteur" required />
+        </div>
+        <div class="catergorie">
+          <label for="pages">aantal pagina's</label>
+          <input type="number" required />
+        </div>
+
+        <button type="submit">voeg boek toe</button>
+      </form>
+
+      <button type="submit">nieuw boek</button>
+    </section>
+    <section>
+      <div id="display-boeken"></div>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+#nieuw-boek {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 50%;
+  height: 30vh;
+  margin: 0 auto;
+}
+
+.catergorie {
+  display: flex;
+  flex-direction: column;
+}
