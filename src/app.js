@@ -16,18 +16,25 @@ const myLibrary = [
 class Book {
   constructor() {
     // the constructor...
-    this.titel = document.querySelector('');
+    this.titel = document.querySelector('#title').value;
+    this.auteur = document.querySelector('#auteur').value;
+    this.totaalPaginas = document.querySelector('#pagina').value;
+    this.id = crypto.randomUUID();
   }
 }
 
-function addBookToLibrary(auteur, titel, pagina, id) {
+function addBookToLibrary(titel, auteur, pagina, id) {
   // take params, create a book then store it in the array
+  myLibrary.push(new Book(titel, auteur, pagina, id));
 }
 
+// loops over the array of added books
 function loopArray() {
-  myLibrary.forEach((element) => {
-    console.log(element);
+  myLibrary.forEach((book) => {
+    console.log(book);
   });
 }
+
+addBookToLibrary();
 
 loopArray();

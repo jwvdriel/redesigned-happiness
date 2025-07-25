@@ -7,6 +7,14 @@
 
     <!-- stylesheet -->
     <link rel="stylesheet" href="/styles/style.css" />
+
+    <!-- google style sheet Inter full axis 100-900 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet" />
+
     <script src="src/app.js" defer></script>
   </head>
   <body>
@@ -23,13 +31,17 @@
         </div>
         <div class="catergorie">
           <label for="pages">aantal pagina's</label>
-          <input type="number" required />
+          <input type="number" id="pagina" required />
         </div>
 
-        <button type="submit">voeg boek toe</button>
+        <button type="submit" id="add-book" class="button-primary">
+          voeg boek toe
+        </button>
       </form>
 
-      <button type="submit">nieuw boek</button>
+      <button type="submit" id="show-form" class="button-primary">
+        nieuw boek
+      </button>
     </section>
     <section>
       <div id="display-boeken"></div>
