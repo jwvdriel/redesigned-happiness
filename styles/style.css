@@ -23,7 +23,15 @@ body {
   width: 50%;
   height: 50vh;
   margin: 0 auto;
-  display: none;
+  visibility: hidden;
+}
+
+h1 {
+  font-size: 4rem;
+  line-height: 1.6em;
+  letter-spacing: 2px;
+  display: flex;
+  justify-content: center;
 }
 
 .catergorie {

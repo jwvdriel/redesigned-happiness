@@ -1,3 +1,4 @@
+// array of books
 const myLibrary = [
   {
     auteur: 'Tad Williams',
@@ -13,6 +14,17 @@ const myLibrary = [
   },
 ];
 
+// variables
+const showFormButton = document.querySelector('.show-button');
+const formElement = document.querySelector('#nieuw-boek');
+
+// shows form after clicking button to add books
+showFormButton.addEventListener('click', () => {
+  if (formElement.style.visibility === 'hidden') {
+    formElement.style.visibility = 'visible';
+  }
+});
+
 class Book {
   constructor() {
     // the constructor...
@@ -26,6 +38,7 @@ class Book {
 function addBookToLibrary(titel, auteur, pagina, id) {
   // take params, create a book then store it in the array
   myLibrary.push(new Book(titel, auteur, pagina, id));
+  loopArray();
 }
 
 // loops over the array of added books
@@ -36,5 +49,3 @@ function loopArray() {
 }
 
 addBookToLibrary();
-
-loopArray();
