@@ -23,25 +23,35 @@
       <form action="post" id="nieuw-boek">
         <div class="catergorie">
           <label for="title">titel</label>
-          <input type="text" id="title" required />
+          <input
+            type="text"
+            id="title"
+            required
+            placeholder="titel van het boek" />
         </div>
         <div class="catergorie">
           <label for="author">auteur</label>
-          <input type="text" id="auteur" required />
+          <input type="text" id="auteur" required placeholder="schrijver" />
         </div>
         <div class="catergorie">
           <label for="pages">aantal pagina's</label>
-          <input type="number" id="pagina" required />
+          <input
+            type="number"
+            id="pagina"
+            required
+            placeholder="aantal pagina's" />
         </div>
-
-        <button type="submit" id="add-book" class="button-primary">
-          voeg boek toe
-        </button>
+        <div class="width30">
+          <button type="submit" id="add-book" class="button-primary">
+            voeg boek toe
+          </button>
+        </div>
       </form>
-
-      <button type="submit" id="show-form" class="button-primary">
-        nieuw boek
-      </button>
+      <div class="show-button">
+        <button type="submit" id="show-form" class="button-primary">
+          nieuw boek
+        </button>
+      </div>
     </section>
     <section>
       <div id="display-boeken"></div>
