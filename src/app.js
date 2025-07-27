@@ -17,11 +17,18 @@ const myLibrary = [
 // variables
 const showFormButton = document.querySelector('.show-button');
 const formElement = document.querySelector('#nieuw-boek');
+const voegBoekToe = document.querySelector('#add-book');
 
 // shows form after clicking button to add books
 showFormButton.addEventListener('click', () => {
-  if (formElement.style.visibility === 'hidden') {
-    formElement.style.visibility = 'visible';
+  if (formElement.style.display === 'none') {
+    formElement.style.display = 'block';
+  }
+});
+
+voegBoekToe.addEventListener('click', () => {
+  if ((formElement.style.display = 'block')) {
+    formElement.style.display = 'none';
   }
 });
 
