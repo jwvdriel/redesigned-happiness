@@ -63,9 +63,20 @@ function loopArray() {
 
     // appends div element to parent element
     displayBoeken.append(divElement);
+
+    // insert the html element before the end of the Div with the class name card
     divElement.insertAdjacentHTML(
       'beforeend',
-      ` <h3 classname='heading'> Titel</h3> <p> ${book.titel} </p> <p> ${book.auteur} </p> <p> ${book.totaalPaginas} </p>`
+      `<h3> Titel</h3>
+      <p> ${book.titel} </p> 
+      <h3>Auteur</h3> 
+      <p> ${book.auteur} </p> 
+      <h3>Aantal Pagina's</h3>
+      <p> ${book.totaalPaginas} </p>
+      <div class='layout-buttons'>
+      <button class='button-primary delete-button'>remove</button>
+      <button class='button-primary been-read'>Read?</button>
+      </div>`
     );
   });
 }
