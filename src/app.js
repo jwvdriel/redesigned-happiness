@@ -18,6 +18,8 @@ const myLibrary = [
 const showFormButton = document.querySelector('.show-button');
 const formElement = document.querySelector('#nieuw-boek');
 const voegBoekToe = document.querySelector('#add-book');
+const cardDiv = document.querySelector('.card');
+const displayBoeken = document.querySelector('#display-boeken');
 
 // shows form after clicking button to add books
 showFormButton.addEventListener('click', () => {
@@ -47,14 +49,28 @@ class Book {
 // take params, from the class Book and creates a book then stores it in the array
 function addBookToLibrary(titel, auteur, totaalPaginas, id) {
   myLibrary.push(new Book(titel, auteur, totaalPaginas, id));
-  loopArray();
 }
 
 // loops over the array of added books
 function loopArray() {
-  myLibrary.forEach((book) => {
-    console.log(book.titel, book.auteur, book.totaalPaginas, book.id);
+  myLibrary.forEach((book, index) => {
+    // create div element
+    let divElement = document.createElement('div');
+    let paragraphElement = document.createElement('p');
+
+    // adds a class name for CSS
+    divElement.classList.add('card');
+
+    // appends div element to parent element
+    displayBoeken.append(divElement);
+    divElement.insertAdjacentHTML(
+      'beforeend',
+      ` <h3 classname='heading'> Titel</h3> <p> ${book.titel} </p> <p> ${book.auteur} </p> <p> ${book.totaalPaginas} </p>`
+    );
   });
 }
 
+// show the current books from the array
+
 addBookToLibrary();
+loopArray();
