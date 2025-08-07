@@ -15,26 +15,9 @@ const myLibrary = [
 ];
 
 // variables
-const showFormButton = document.querySelector('.show-button');
-const formElement = document.querySelector('#nieuw-boek');
 const voegBoekToe = document.querySelector('#add-book');
 const cardDiv = document.querySelector('.card');
 const displayBoeken = document.querySelector('#display-boeken');
-
-// shows form after clicking button to add books
-showFormButton.addEventListener('click', () => {
-  if (formElement.style.display === 'none') {
-    formElement.style.display = 'block';
-  }
-});
-
-// hides the form after adding a book to the array
-voegBoekToe.addEventListener('click', (event) => {
-  event.preventDefault();
-  if ((formElement.style.display = 'block')) {
-    formElement.style.display = 'none';
-  }
-});
 
 // the constructor...
 class Book {
@@ -56,7 +39,6 @@ function loopArray() {
   myLibrary.forEach((book, index) => {
     // create div element
     let divElement = document.createElement('div');
-    let paragraphElement = document.createElement('p');
 
     // adds a class name for CSS
     divElement.classList.add('card');
@@ -75,13 +57,12 @@ function loopArray() {
       <p> ${book.totaalPaginas} </p>
       <div class='layout-buttons'>
       <button class='button-primary delete-button'>remove</button>
-      <button class='button-primary been-read'>Read?</button>
+      <button class='button-primary' id='gelezen-button' data-id=${book.id}>Read?</button>
       </div>`
     );
   });
 }
 
 // show the current books from the array
-
 addBookToLibrary();
 loopArray();
