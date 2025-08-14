@@ -1,55 +1,45 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>boeken bibliotheek</title>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>boeken bibliotheek</title>
 
-    <!-- stylesheet -->
-    <link rel="stylesheet" href="/styles/style.css" />
+		<!-- stylesheet -->
+		<link rel="stylesheet" href="/styles/style.css" />
 
-    <!-- google style sheet Inter full axis 100-900 -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-      rel="stylesheet" />
+		<!-- google style sheet Inter full axis 100-900 -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+			rel="stylesheet" />
 
-    <script src="src/app.js" defer></script>
-  </head>
-  <body>
-    <section>
-      <h1>De bibliotheek</h1>
-      <form action="post" id="nieuw-boek">
-        <div class="catergorie">
-          <label for="title">titel</label>
-          <input
-            type="text"
-            id="title"
-            required
-            placeholder="titel van het boek" />
-        </div>
-        <div class="catergorie">
-          <label for="author">auteur</label>
-          <input type="text" id="auteur" required placeholder="schrijver" />
-        </div>
-        <div class="catergorie">
-          <label for="pages">aantal pagina's</label>
-          <input
-            type="number"
-            id="pagina"
-            required
-            placeholder="aantal pagina's" />
-        </div>
-        <div class="width30">
-          <button type="submit" id="add-book" class="button-primary">
-            voeg boek toe
-          </button>
-        </div>
-      </form>
-    </section>
-    <section>
-      <div id="display-boeken"></div>
-    </section>
-  </body>
+		<script src="src/app.js" defer></script>
+	</head>
+	<body>
+		<section>
+			<h1>De bibliotheek</h1>
+			<form action="post" id="nieuw-boek">
+				<div class="catergorie">
+					<label for="title">titel</label>
+					<input type="text" id="title" required placeholder="titel van het boek" />
+				</div>
+				<div class="catergorie">
+					<label for="author">auteur</label>
+					<input type="text" id="auteur" required placeholder="schrijver" />
+				</div>
+				<div class="catergorie">
+					<label for="pages">aantal pagina's</label>
+					<input type="number" id="pagina" required placeholder="aantal pagina's" />
+				</div>
+				<div class="width30">
+					<button type="submit" id="add-book" class="button-primary">voeg boek toe</button>
+				</div>
+			</form>
+		</section>
+		<section>
+			<div id="display-boeken"></div>
+		</section>
+	</body>
 </html>
