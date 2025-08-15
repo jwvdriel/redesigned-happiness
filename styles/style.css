@@ -122,3 +122,8 @@ input::placeholder {
 #gelezen-button {
   width: 45%;
 }
+
+/*when clicked on gelezen button apply the following style to the element*/
+.strike-throug {
+  text-decoration-line: line-through;
+}

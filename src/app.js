@@ -15,7 +15,7 @@ const myLibrary = [
 ];
 
 // variables
-const voegBoekToe = document.querySelector('#add-book');
+const voegBoekToe = document.querySelector('#voegNieuwBoekToe');
 const cardDiv = document.querySelector('.card');
 const displayBoeken = document.querySelector('#display-boeken');
 
@@ -56,10 +56,21 @@ function loopArray() {
       <h3>Aantal Pagina's</h3>
       <p> ${book.totaalPaginas} </p>
       <div class='layout-buttons'>
-      <button class='button-primary delete-button'>remove</button>
-      <button class='button-primary' id='gelezen-button' data-id=${book.id}>Read?</button>
+      <button class='button-primary delete-button'>Verwijderen</button>
+      <button class='button-primary' id='gelezen-button' data-id=${book.id}>Gelezen</button>
       </div>`
     );
+  });
+  boekenGelezen();
+}
+
+function boekenGelezen() {
+  const boekGelezen = document.querySelectorAll('#gelezen-button');
+
+  boekGelezen.forEach((gelezenBoek) => {
+    gelezenBoek.addEventListener('click', () => {
+      alert('gelezen!')
+    })
   });
 }
 
