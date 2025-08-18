@@ -16,7 +16,6 @@ const myLibrary = [
 
 // variables
 const voegBoekToe = document.querySelector('#voegNieuwBoekToe');
-const cardDiv = document.querySelector('.card');
 const displayBoeken = document.querySelector('#display-boeken');
 
 // the constructor...
@@ -65,12 +64,15 @@ function loopArray() {
 }
 
 function boekenGelezen() {
-  const boekGelezen = document.querySelectorAll('#gelezen-button');
+  const boekGelezenButton = document.querySelectorAll('#gelezen-button');
+  const cardDivElement = document.querySelectorAll('.card');
 
-  boekGelezen.forEach((gelezenBoek) => {
+  boekGelezenButton.forEach((gelezenBoek) => {
     gelezenBoek.addEventListener('click', () => {
-      alert('gelezen!')
-    })
+      for (let i = 0; i < cardDivElement.length; i++) {
+        console.log(cardDivElement.children);
+      }
+    });
   });
 }
 
