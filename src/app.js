@@ -35,7 +35,7 @@ function addBookToLibrary(titel, auteur, totaalPaginas, id) {
 
 // loops over the array of added books
 function loopArray() {
-  myLibrary.forEach((book, index) => {
+  myLibrary.forEach((book) => {
     // create div element
     let divElement = document.createElement('div');
 
@@ -59,20 +59,6 @@ function loopArray() {
       <button class='button-primary' id='gelezen-button' data-id=${book.id}>Gelezen</button>
       </div>`
     );
-  });
-  boekenGelezen();
-}
-
-function boekenGelezen() {
-  const boekGelezenButton = document.querySelectorAll('#gelezen-button');
-  const cardDivElement = document.querySelectorAll('.card');
-
-  boekGelezenButton.forEach((gelezenBoek) => {
-    gelezenBoek.addEventListener('click', () => {
-      for (let i = 0; i < cardDivElement.length; i++) {
-        console.log(cardDivElement.children);
-      }
-    });
   });
 }
 
