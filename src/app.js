@@ -63,6 +63,24 @@ function loopArray() {
   gelezenAangevenButton();
 }
 
+function StrikeThroughWords() {
+  // selects the parent element of the current div
+  const parentDiv = document.querySelectorAll('.card');
+
+  // selects all child element of the parent div
+  const paragraphElements = Array.from(parentDiv.querySelectorAll('p'));
+  const h3Elements = Array.from(parentDiv.querySelectorAll('h3'));
+
+  // voeg twee arrays samen
+  const totalArray = h3Elements.concat(paragraphElements);
+
+  for (let i = 0; i < totalArray.length; i++) {
+    const childElements = totalArray[i];
+    // strike through class added to current children elements
+    childElements.classList.add('strike-through');
+  }
+}
+
 function gelezenAangevenButton() {
   // select all buttons
   const gelezenButton = Array.from(
@@ -73,19 +91,12 @@ function gelezenAangevenButton() {
   for (let i = 0; i < gelezenButton.length; i++) {
     const currentButton = gelezenButton[i];
     currentButton.addEventListener('click', () => {
+      // check if both buttons have the same id
       if (currentButton.dataset.id === gelezenButton[i].dataset.id) {
         console.log(`i got clicked`);
-        // selects the parent element of the current div
-        const selectedElements = document.querySelector('.card');
-
-        // selects all child element of the parent div
-        const paragraphElements = Array.from(
-          selectedElements.querySelectorAll('p')
-        );
-        const h3Elements = Array.from(selectedElements.querySelectorAll('h3'));
-
-        // voeg twee arrays samen
-        const totalArray = h3Elements.concat(paragraphElements);
+        StrikeThroughWords();
+      } else {
+        throw new Error('Something went wrong check again please');
       }
     });
   }
