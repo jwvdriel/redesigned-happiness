@@ -60,6 +60,35 @@ function loopArray() {
       </div>`
     );
   });
+  gelezenAangevenButton();
+}
+
+function gelezenAangevenButton() {
+  // select all buttons
+  const gelezenButton = Array.from(
+    document.querySelectorAll('#gelezen-button')
+  );
+
+  // loops over each button and do something with it
+  for (let i = 0; i < gelezenButton.length; i++) {
+    const currentButton = gelezenButton[i];
+    currentButton.addEventListener('click', () => {
+      if (currentButton.dataset.id === gelezenButton[i].dataset.id) {
+        console.log(`i got clicked`);
+        // selects the parent element of the current div
+        const selectedElements = document.querySelector('.card');
+
+        // selects all child element of the parent div
+        const paragraphElements = Array.from(
+          selectedElements.querySelectorAll('p')
+        );
+        const h3Elements = Array.from(selectedElements.querySelectorAll('h3'));
+
+        // voeg twee arrays samen
+        const totalArray = h3Elements.concat(paragraphElements);
+      }
+    });
+  }
 }
 
 // show the current books from the array
