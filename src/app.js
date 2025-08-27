@@ -54,47 +54,29 @@ function loopArray() {
       <p> ${book.auteur} </p> 
       <h3>Aantal Pagina's</h3>
       <p> ${book.totaalPaginas} </p>
-      <div class='layout-buttons'>
-      <button class='button-primary delete-button'>Verwijderen</button>
-      <button class='button-primary' id='gelezen-button' data-id=${book.id}>Gelezen</button>
-      </div>`
+      <button class='button-primary gelezen-button' id='${book.id}' >Niet Gelezen</button>`
     );
   });
   gelezenAangevenButton();
 }
 
-function StrikeThroughWords() {
-  // selects the parent element of the current div
-  // const parentDiv = document.querySelectorAll('.card');
-}
-
+// make the text strike-through when book is being read
 function gelezenAangevenButton() {
   // select all buttons
-  const gelezenButton = document.querySelectorAll('#gelezen-button');
-  const paragraphElements = Array.from(document.querySelectorAll(' p'));
-  const h3Elements = Array.from(document.querySelectorAll('h3'));
-
-  // loops over each button and do something with it
-  gelezenButton.forEach((buttonStrike) => {
-    console.log(buttonStrike);
-  });
-  // selects all child element of the parent div
-
-  // // voeg twee arrays samen
-  const totalArray = h3Elements.concat(paragraphElements);
-
-  // strike through class added to current children elements
-  for (let i = 0; i < totalArray.length; i++) {
-    const childElements = totalArray[i];
-
-    // if it has the current class
-    if (childElements.classList.contains('strike-through')) {
-      // remove it
-      childElements.classList.remove('strike-through');
-    } else {
-      // add it
-      childElements.classList.add('strike-through');
-    }
+  const gelezenButton = document.querySelectorAll('.gelezen-button');
+  // loops over the current button
+  for (let i = 0; i < gelezenButton.length; i++) {
+    const element = gelezenButton[i];
+    element.addEventListener('click', function (event) {
+      // adds the class to the current parent node of which the button belongs too
+      if (event.target.parentNode.classList.contains('strike-through')) {
+        // if the elements have the class remove it
+        event.target.parentNode.classList.remove('strike-through');
+        // else add it
+      } else {
+        event.target.parentNode.classList.add('strike-through');
+      }
+    });
   }
 }
 
