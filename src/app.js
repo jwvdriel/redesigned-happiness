@@ -72,9 +72,11 @@ function gelezenAangevenButton() {
       if (event.target.parentNode.classList.contains('strike-through')) {
         // if the elements have the class remove it
         event.target.parentNode.classList.remove('strike-through');
+        element.innerText = 'Niet Gelezen';
         // else add it
       } else {
         event.target.parentNode.classList.add('strike-through');
+        element.innerText = 'Gelezen';
       }
     });
   }
